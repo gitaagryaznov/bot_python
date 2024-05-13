@@ -1,5 +1,6 @@
-pip install pyTelegramBotAPI
-pip install pandas
-pip install SQLAlchemy
-pip install psycopg2
-pip install oauth2client
+pyTelegramBotAPI
+pandas
+SQLAlchemy
+psycopg2
+oauth2client
+gspread= 5.9.0
