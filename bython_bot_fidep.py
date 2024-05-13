@@ -1,13 +1,10 @@
 import telebot
 from random import randint
 import datetime
-
 import time
 import pandas as pd
 import requests
 import re
-import apiclient.discovery
-from oauth2client.service_account import ServiceAccountCredentials
 import os
 import gspread as gs
 from sqlalchemy import create_engine, Column, String, Integer
