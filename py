@@ -14,6 +14,23 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 import psycopg2
 import tabulate
+from airflow.operators.python import PythonOperator
+from datetime import timedelta, datetime
 
+ from airflow import DAG
+ from airflow.operators.empty import EmptyOperator
 
-print("HELLO SASHA LESNOY")
+dag = DAG('ETL_test',
+          schedule_interval=timedelta(days=1),
+          start_date=datetime(2021, 12, 17, 0))
+def test():
+    print("HELLO SASHA LESNOY")
+
+task_transform_people = PythonOperator(
+    task_id='test',
+    python_callable=test,
+    dag=dag,
+    provide_context=True
+)
+
+task_transform_people
